@@ -213,9 +213,6 @@ public class AffyProbesConverter extends BioFileConverter
 
     private String createGene(String id)
         throws ObjectStoreException {
-        if (rslv == null || !rslv.hasTaxon(TAXON_FLY)) {
-            return null;
-        }
         String identifier = id;
         int resCount = rslv.countResolutions(TAXON_FLY, identifier);
         if (resCount != 1) {

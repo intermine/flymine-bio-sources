@@ -226,9 +226,6 @@ public class BDGPInsituConverter extends BioFileConverter
     }
 
     private Item getGene(String geneCG) throws ObjectStoreException {
-        if (rslv == null || !rslv.hasTaxon(TAXON_FLY)) {
-            return null;
-        }
         int resCount = rslv.countResolutions(TAXON_FLY, geneCG);
         if (resCount != 1) {
             LOG.info("RESOLVER: failed to resolve gene to one identifier, ignoring gene: "

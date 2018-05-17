@@ -25,6 +25,7 @@ import org.intermine.objectstore.query.Results;
 import org.intermine.objectstore.query.ResultsRow;
 
 import org.intermine.bio.util.Constants;
+import org.intermine.bio.util.PostProcessUtil;
 import org.intermine.metadata.ClassDescriptor;
 import org.intermine.metadata.Model;
 import org.intermine.objectstore.ObjectStore;
@@ -237,8 +238,7 @@ public class MagePostProcess extends PostProcessor
             if (lastClone == null || !thisClone.getId().equals(lastClone.getId())) {
                 if (lastClone != null) {
                     // clone so we don't change the ObjectStore cache
-                    CDNAClone tempClone = PostProcessUtil
-                        .cloneInterMineObject(lastClone);
+                    CDNAClone tempClone = PostProcessUtil.cloneInterMineObject(lastClone);
                     tempClone.setFieldValue("results", newCollection);
                     osw.store(tempClone);
                     count++;
@@ -268,8 +268,6 @@ public class MagePostProcess extends PostProcessor
             DatabaseUtil.analyse(((ObjectStoreWriterInterMineImpl) osw).getDatabase(), cld, false);
         }
     }
-
-
 
     /**
      * Creates a collection of MicroArrayResult objects on CompositeSequence.

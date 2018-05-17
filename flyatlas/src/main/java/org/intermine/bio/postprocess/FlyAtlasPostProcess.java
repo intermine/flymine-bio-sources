@@ -20,6 +20,7 @@ import org.intermine.model.bio.ProbeSet;
 import org.intermine.model.bio.MicroArrayResult;
 
 import org.intermine.bio.util.Constants;
+import org.intermine.bio.util.PostProcessUtil;
 import org.intermine.objectstore.ObjectStore;
 import org.intermine.objectstore.ObjectStoreException;
 import org.intermine.objectstore.ObjectStoreWriter;

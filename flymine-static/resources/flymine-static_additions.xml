@@ -99,9 +99,6 @@
 	<collection name="crossReferences" referenced-type="CrossReference"/>
 	<collection name="dataSets" referenced-type="DataSet"/>
 </class>
-<class name="IntergenicRegion" extends="SequenceFeature" is-interface="true">
-	<collection name="adjacentGenes" referenced-type="Gene"/>
-</class>
 <class name="ChromosomalTranslocation" extends="ChromosomeStructureVariation" is-interface="true"></class>
 <class name="ProteinDomainRegion" is-interface="true">
 	<attribute name="identifier" type="java.lang.String"/>

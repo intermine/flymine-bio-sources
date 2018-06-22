@@ -22,6 +22,10 @@ sourceSets {
     }
 }
 
+dependencies {
+    compile group: 'org.intermine', name: 'bio-model', version: bioVersion
+}
+
 processResources {
     from('.') { include ("*.properties")}
 }

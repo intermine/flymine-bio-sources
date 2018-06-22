@@ -1,4 +1,9 @@
 <model name="genomic" package="org.intermine.model.bio">
+<class name="Annotatable" is-interface="true">
+	<attribute name="primaryIdentifier" type="java.lang.String"/>
+	<collection name="ontologyAnnotations" referenced-type="OntologyAnnotation" reverse-reference="subject"/>
+	<collection name="publications" referenced-type="Publication" reverse-reference="entities"/>
+</class>
 <class name="Intron" extends="SequenceFeature" is-interface="true">
 	<collection name="transcripts" referenced-type="Transcript" reverse-reference="introns"/>
 	<collection name="genes" referenced-type="Gene" reverse-reference="introns"/>
@@ -58,7 +63,7 @@
 <class name="Protein" extends="BioEntity" is-interface="true">
 	<attribute name="md5checksum" type="java.lang.String"/>
 	<attribute name="primaryAccession" type="java.lang.String"/>
-	<attribute name="molecularWeight" type="java.lang.Integer"/>
+	<attribute name="molecularWeight" type="java.lang.Double"/>
 	<attribute name="genbankIdentifier" type="java.lang.String"/>
 	<attribute name="ecNumber" type="java.lang.String"/>
 	<attribute name="length" type="java.lang.Integer"/>
@@ -282,7 +287,7 @@
 	<attribute name="abstractText" type="java.lang.String"/>
 	<attribute name="pubMedId" type="java.lang.String"/>
 	<collection name="authors" referenced-type="Author" reverse-reference="publications"/>
-	<collection name="bioEntities" referenced-type="BioEntity" reverse-reference="publications"/>
+	<collection name="entities" referenced-type="Annotatable" reverse-reference="publications"/>
 	<collection name="crossReferences" referenced-type="DatabaseReference" reverse-reference="subject"/>
 	<collection name="meshTerms" referenced-type="MeshTerm" reverse-reference="publications"/>
 </class>
@@ -314,7 +319,7 @@
 <class name="OntologyAnnotation" is-interface="true">
 	<attribute name="qualifier" type="java.lang.String"/>
 	<reference name="ontologyTerm" referenced-type="OntologyTerm" reverse-reference="ontologyAnnotations"/>
-	<reference name="subject" referenced-type="BioEntity" reverse-reference="ontologyAnnotations"/>
+	<reference name="subject" referenced-type="Annotatable" reverse-reference="ontologyAnnotations"/>
 	<collection name="dataSets" referenced-type="DataSet"/>
 </class>
 <class name="GOEvidenceCode" is-interface="true">
@@ -413,6 +418,9 @@
 <class name="TransposableElement" extends="SequenceFeature" is-interface="true">
 	<reference name="insertedElement" referenced-type="NaturalTransposableElement" reverse-reference="transposableElements"/>
 </class>
+	<class name="IntergenicRegion" is-interface="true">
+		<collection name="adjacentGenes" referenced-type="Gene"/>
+	</class>
 <class name="Gene" extends="SequenceFeature" is-interface="true">
 	<attribute name="briefDescription" type="java.lang.String"/>
 	<attribute name="description" type="java.lang.String"/>
@@ -475,7 +483,7 @@
 <class name="Organism" is-interface="true">
 	<attribute name="species" type="java.lang.String"/>
 	<attribute name="genus" type="java.lang.String"/>
-	<attribute name="taxonId" type="java.lang.Integer"/>
+	<attribute name="taxonId" type="java.lang.String"/>
 	<attribute name="name" type="java.lang.String"/>
 	<attribute name="commonName" type="java.lang.String"/>
 	<attribute name="shortName" type="java.lang.String"/>
@@ -546,7 +554,7 @@
 	<attribute name="abbreviation" type="java.lang.String"/>
 	<attribute name="name" type="java.lang.String"/>
 </class>
-<class name="BioEntity" is-interface="true">
+<class name="BioEntity" extends="Annotatable" is-interface="true">
 	<attribute name="symbol" type="java.lang.String"/>
 	<attribute name="name" type="java.lang.String"/>
 	<attribute name="primaryIdentifier" type="java.lang.String"/>
@@ -554,7 +562,6 @@
 	<reference name="organism" referenced-type="Organism"/>
 	<collection name="interactions" referenced-type="Interaction" reverse-reference="participant1"/>
 	<collection name="locations" referenced-type="Location" reverse-reference="feature"/>
-	<collection name="publications" referenced-type="Publication" reverse-reference="bioEntities"/>
 	<collection name="ontologyAnnotations" referenced-type="OntologyAnnotation" reverse-reference="subject"/>
 	<collection name="synonyms" referenced-type="Synonym" reverse-reference="subject"/>
 	<collection name="crossReferences" referenced-type="CrossReference" reverse-reference="subject"/>

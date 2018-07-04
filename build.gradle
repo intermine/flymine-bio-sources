@@ -1,13 +1,17 @@
+import com.sun.org.apache.xalan.internal.xsltc.compiler.Copy
+
 buildscript {
     repositories {
         mavenLocal()
-        mavenCentral()
+        jcenter()
         maven {
             url "https://oss.jfrog.org/artifactory/oss-snapshot-local"
         }
     }
     dependencies {
         classpath group: 'org.intermine', name: 'plugin', version: System.getProperty("imVersion")
+        classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.0"
+        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.6.2"
     }
 }
 
@@ -30,8 +34,8 @@ subprojects {
     targetCompatibility = 1.8
 
     repositories {
-        mavenCentral()
         mavenLocal()
+        jcenter()
         maven {
             url "https://oss.jfrog.org/artifactory/oss-snapshot-local"
         }
@@ -60,12 +64,14 @@ subprojects {
         defaultInterminePropertiesFile = "default.intermine.bio-test.properties"
     }
 
-    task copyMineProperties(type: Copy) {
+    task copyMineProperties() {
+        dependsOn 'processResources'
         doLast {
-            from "${System.env.HOME}/.intermine/intermine-bio-test.properties"
-            into sourceSets.main.output.resourcesDir
-            rename { fileName -> fileName.replace('intermine-bio-test.properties', 'intermine.properties') }
-            inputs.sourceFiles.stopExecutionIfEmpty()
+            copy {
+                from "${System.env.HOME}/.intermine/intermine-bio-test.properties"
+                into sourceSets.main.output.resourcesDir
+                rename { fileName -> fileName.replace('intermine-bio-test.properties', 'intermine.properties') }
+            }
         }
     }
 

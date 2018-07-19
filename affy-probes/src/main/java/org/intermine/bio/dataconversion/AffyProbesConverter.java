@@ -34,10 +34,11 @@ public class AffyProbesConverter extends BioFileConverter
     protected static final Logger LOG = Logger.getLogger(AffyProbesConverter.class);
 
     protected String dataSource, dataSet;
+    private static final String DATASET_1 = "Affymetrix array: GeneChip Drosophila Genome 2.0 Array";
+    private static final String DATASET_2 = "Affymetrix array: GeneChip Drosophila Genome Array";
     private String orgRefId;
     protected Map<String, String> bioentities = new HashMap<String, String>();
     private static final String TAXON_FLY = "7227";
-    private static final String DATASET_PREFIX = "Affymetrix array: ";
     private Map<String, String> chromosomes = new HashMap<String, String>();
     private Map<String, ProbeSetHolder> holders = new HashMap<String, ProbeSetHolder>();
     private List<Item> delayedItems = new LinkedList<Item>();
@@ -73,7 +74,12 @@ public class AffyProbesConverter extends BioFileConverter
 
         while (lineIter.hasNext()) {
             String[] line = lineIter.next();
-            dataSet = getDataSet(DATASET_PREFIX + line[0], dataSource);
+            String version = line[0];
+            String title = DATASET_2;
+            if ("Drosophila1".equals(version)) {
+                title = DATASET_1;
+            }
+            dataSet = getDataSet(title, dataSource);
 
             String probesetIdentifier = line[1];
             String transcriptIdentifier = line[2];

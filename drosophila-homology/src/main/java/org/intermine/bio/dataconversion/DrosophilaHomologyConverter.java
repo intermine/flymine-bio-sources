@@ -47,7 +47,7 @@ public class DrosophilaHomologyConverter extends BioFileConverter
      */
     public DrosophilaHomologyConverter(ItemWriter writer, Model model)
         throws ObjectStoreException, MetaDataException {
-        super(writer, model, "FlyBase", "Drosophila 12 Genomes Consortium homology");
+        super(writer, model, "FlyBase", "Drosophila species orthologues and paralogues");
 
         pub = createItem("Publication");
         pub.setAttribute("pubMedId", "17994087");

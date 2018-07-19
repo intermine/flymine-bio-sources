@@ -5,7 +5,7 @@
 <class name="DOAnnotation" extends="OntologyAnnotation" is-interface="true">
   <collection name="evidence" referenced-type="DOEvidence"/>
 </class>
-<class name="Allele" is-interface="true">
+<class name="Allele" extends="SequenceFeature" is-interface="true">
   <collection name="doAnnotation" referenced-type="DOAnnotation"/>
 </class>
 <class name="DOTerm" extends="OntologyTerm" is-interface="true"/>

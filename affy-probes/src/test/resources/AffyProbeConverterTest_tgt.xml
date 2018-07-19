@@ -1,6 +1,6 @@
 <items>
 <item id="3_1" class="DataSet">
-<attribute name="name" value="Affymetrix array: DrosGenome1"/>
+<attribute name="name" value="Affymetrix array: GeneChip Drosophila Genome Array"/>
 <reference name="dataSource" ref_id="1_1"/>
 </item>
 <item id="1_1" class="DataSource">

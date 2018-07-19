@@ -7,7 +7,7 @@
   <collection name="dataSets" referenced-type="DataSet"/>
   <collection name="evidence" referenced-type="OrthologueEvidence"/>
 </class>
-<class name="Gene" is-interface="true">
+<class name="Gene" extends="SequenceFeature" is-interface="true">
   <collection name="homologues" referenced-type="Homologue" reverse-reference="gene"/>
 </class>
 <class name="OrthologueEvidence" is-interface="true">

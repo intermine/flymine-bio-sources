@@ -29,7 +29,7 @@ public class LongOligoGFF3SeqHandler extends GFF3SeqHandler
      * Construct the seq handler.
      */
     public LongOligoGFF3SeqHandler() {
-        rslv = IdResolverService.getFlyIdResolver(CLASS_NAME);
+
     }
 
 
@@ -38,6 +38,9 @@ public class LongOligoGFF3SeqHandler extends GFF3SeqHandler
      */
     @Override
     public String getSeqIdentifier(String id) {
+        if (rslv == null) {
+            rslv = IdResolverService.getFlyIdResolver(CLASS_NAME);
+        }
         if (rslv == null || !rslv.hasTaxonAndClassName(TAXON_FLY, CLASS_NAME)) {
             return null;
         }

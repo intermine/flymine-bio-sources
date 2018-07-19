@@ -12,8 +12,3 @@ sourceSets {
 processResources {
     from('.') { include ("*.properties")}
 }
-
-dependencies {
-    compile group: 'org.intermine', name: 'intermine-integrate', version: imVersion
-    compile group: 'org.intermine', name: 'intermine-objectstore', version: imVersion
-}

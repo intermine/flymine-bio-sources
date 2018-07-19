@@ -26,7 +26,7 @@
 <collection name="dataSets"><reference ref_id="2_1"/></collection>
 </item>
 <item id="1_1" class="DataSource">
-<attribute name="name" value="FlyBase Human disease model data set"/>
+<attribute name="name" value="FlyBase"/>
 </item>
 <item id="6_2" class="DOAnnotation">
 <attribute name="qualifier" value="model of"/>
@@ -93,7 +93,7 @@
 <collection name="doAnnotation"><reference ref_id="6_4"/><reference ref_id="6_5"/></collection>
 </item>
 <item id="2_1" class="DataSet">
-<attribute name="name" value="FlyBase"/>
+<attribute name="name" value="Alleles and phenotypes"/>
 <reference name="dataSource" ref_id="1_1"/>
 </item>
 </items>

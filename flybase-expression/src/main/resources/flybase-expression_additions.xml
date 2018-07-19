@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <classes>
-  <class name="Gene" is-interface="true">
+  <class name="Gene"  extends="SequenceFeature" is-interface="true">
      <collection name="rnaSeqResults" referenced-type="RNASeqResult" reverse-reference="gene"/>
   </class>
   <class name="RNASeqResult" is-interface="true">

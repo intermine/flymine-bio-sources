@@ -1,11 +1,15 @@
 <?xml version="1.0"?>
 <classes>
-  <class name="CRM" is-interface="true">
+  <class name="CRM" extends="RegulatoryRegion" is-interface="true">
     <attribute name="curated" type="java.lang.Boolean"/>
     <collection name="anatomyOntology" referenced-type="AnatomyTerm"/>
   </class>
   <class name="AnatomyTerm" extends="OntologyTerm" is-interface="true"/>
-  <class name="RegulatoryRegion" is-interface="true">
+  <class name="RegulatoryRegion" extends="SequenceFeature" is-interface="true">
     <attribute name="evidenceMethod" type="java.lang.String"/>
+    <reference name="gene" referenced-type="Gene" reverse-reference="regulatoryRegions"/>
   </class>
+    <class name="Gene" extends="SequenceFeature" is-interface="true">
+        <collection name="regulatoryRegions" referenced-type="RegulatoryRegion" reverse-reference="gene"/>
+    </class>
 </classes>

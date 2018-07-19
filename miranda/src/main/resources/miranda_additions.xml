@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <classes>
-<class name="Gene" is-interface="true" >
+<class name="Gene" extends="SequenceFeature" is-interface="true" >
   <collection name="miRNAtargets" referenced-type="MiRNATarget" reverse-reference="mirnagene"/>
 </class>
 <class name="MiRNATarget" extends="SequenceFeature" is-interface="true" >
@@ -8,7 +8,7 @@
   <reference name="target" referenced-type="MRNA" reverse-reference="miRNAinteractions"/>
   <reference name="mirnagene" referenced-type="Gene" reverse-reference="miRNAtargets"/>
 </class>
-<class name="MRNA" is-interface="true" >
+<class name="MRNA" extends="SequenceFeature" is-interface="true" >
   <collection name="miRNAinteractions" referenced-type="MiRNATarget" reverse-reference="target"/>
 </class>
 </classes>

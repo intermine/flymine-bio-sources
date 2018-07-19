@@ -1,9 +1,15 @@
 <?xml version="1.0"?>
 <classes>
-<class name="BindingSite" is-interface="true">
+
+<class name="TFBindingSite" extends="BindingSite RegulatoryRegion" is-interface="true"/>
+<class name="BindingSite" extends="SequenceFeature" is-interface="true">
   <reference name="factor" referenced-type="Gene"/>
 </class>
-<class name="RegulatoryRegion" is-interface="true">
+<class name="RegulatoryRegion" extends="SequenceFeature" is-interface="true">
   <attribute name="evidenceMethod" type="java.lang.String"/>
+  <reference name="gene" referenced-type="Gene" reverse-reference="regulatoryRegions"/>
+</class>
+<class name="Gene" extends="SequenceFeature" is-interface="true">
+    <collection name="regulatoryRegions" referenced-type="RegulatoryRegion" reverse-reference="gene"/>
 </class>
 </classes>

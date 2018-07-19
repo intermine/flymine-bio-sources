@@ -1,10 +1,11 @@
 <?xml version="1.0"?>
 <classes>
-<class name="MicroarrayOligo" is-interface="true">
+<class name="MicroarrayOligo" extends="SequenceFeature" is-interface="true">
   <attribute name="tm" type="java.lang.Float"/>
   <reference name="transcript" referenced-type="Transcript" reverse-reference="microarrayOligos"/>
 </class>
-<class name="Transcript" is-interface="true">
+<class name="Transcript" extends="SequenceFeature" is-interface="true">
   <collection name="microarrayOligos" referenced-type="MicroarrayOligo" reverse-reference="transcript"/>
 </class>
+<class name="MRNA" extends="Transcript" is-interface="true"/>
 </classes>

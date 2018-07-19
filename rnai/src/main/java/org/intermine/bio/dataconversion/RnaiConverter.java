@@ -29,7 +29,7 @@ import org.intermine.xml.full.Item;
 public class RnaiConverter extends BioFileConverter
 {
 
-    private static final String DATASET_TITLE = "GenomeRNAi data set";
+    private static final String DATASET_TITLE = "RNAi screen phenotypes";
     private static final String DATA_SOURCE_NAME = "German Cancer Research Center (DKFZ)";
     private static final Logger LOG = Logger.getLogger(RnaiConverter.class);
 
@@ -37,7 +37,7 @@ public class RnaiConverter extends BioFileConverter
     private Map<String, String> publications = new HashMap<String, String>();
     private Map<String, String> screens = new HashMap<String, String>();
     private static final String TAXON_FLY = "7227";
-    private static final String NCBI = "NCBI Entrez Gene identifiers";
+    private static final String NCBI = "NCBI";
     private Item screen;
     // RNAi people use "np" to signal that there is no data. There is actually a gene with Np
     // as it's symbol, so we have to test for this. All identifiers should start with FBgn

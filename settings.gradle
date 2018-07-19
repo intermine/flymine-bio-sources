@@ -39,6 +39,3 @@ project(':bio-source-long-oligo').projectDir = new File(settingsDir, './long-oli
 project(':bio-source-miranda').projectDir = new File(settingsDir, './miranda')
 project(':bio-source-redfly').projectDir = new File(settingsDir, './redfly')
 project(':bio-source-rnai').projectDir = new File(settingsDir, './rnai')
-
-
-

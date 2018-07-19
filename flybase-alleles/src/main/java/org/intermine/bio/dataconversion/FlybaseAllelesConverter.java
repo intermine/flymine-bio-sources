@@ -32,8 +32,8 @@ public class FlybaseAllelesConverter extends BioFileConverter
 {
 
 
-    private static final String DATASET_TITLE = "FlyBase";
-    private static final String DATA_SOURCE_NAME = "FlyBase Human disease model data set";
+    private static final String DATASET_TITLE = "Alleles and phenotypes";
+    private static final String DATA_SOURCE_NAME = "FlyBase";
     private Map<String, Item> alleles = new HashMap<String, Item>();
     private Map<String, String> diseases = new HashMap<String, String>();
 

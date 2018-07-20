@@ -11,3 +11,5 @@ export ANT_OPTS='-server'
 
 # run tests
 ./gradlew build
+
+./gradlew checkstyleMain

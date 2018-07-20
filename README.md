@@ -7,50 +7,12 @@ Master: [![Build Status: master][travis-badge-master]][ci]
 [![Research software impact](http://depsy.org/api/package/pypi/intermine/badge.svg)](http://depsy.org/package/python/intermine)
 [![Conda](https://anaconda.org/intermine/intermine/badges/installer/conda.svg)](https://anaconda.org/bioconda/intermine)
 
-A powerful open source data warehouse system. InterMine allows users
-to integrate diverse data sources with a minimum of effort, providing
-powerful web-services and an elegant web-application with minimal
-configuration. InterMine powers some of the largest data-warehouses in
-the life sciences, including:
+This is a repository of all the data parsers used to load Drosophila data into an InterMine instance (FlyMine). These are fly-specific data, and in addition to the core data parsers available in InterMine. See the [intermine-scripts](http://github.com/intermine/intermine-scripts) respository for the scripts we use to actually download the fly data.
 
-  * [FlyMine](http://www.flymine.org)
-  * [MouseMine](http://www.mousemine.org)
-  * [YeastMine](http://yeastmine.yeastgenome.org)
-  * [ZebrafishMine](http://zebrafishmine.org)
-  * [RatMine](http://ratmine.mcw.edu/ratmine/begin.do)
-  * [TargetMine](http://targetmine.mizuguchilab.org/)
-  * [ThaleMine](https://apps.araport.org/thalemine)
-  * [PhytoMine](https://phytozome.jgi.doe.gov/phytomine)
-
-For details, please visit: [InterMine Documentation][readthedocs]
-
-If you run an InterMine, or use one in your research, in order to improve the chance of continued funding for the
-project it would be appreciated if groups that use InterMine or parts of InterMine would let us know.
-
-Getting Started With InterMine
--------------------------------
-
-For a guide on getting started with InterMine, please visit:
-[quick start tutorial][tutorial]
-
-3min bootstrap
---------------------------------------
-
-As long as you have the prerequisites installed ([Java][java],
-[PostgreSQL][psql]), you can get a working 
-data-warehouse and associated web-application by running an
-automated bootstrap script:
-
-```bash
-  # For a genomic application, with test data from Malaria
-./biotestmine/setup.sh
-```
-
-This requires that you have all the software dependencies
-installed and running with the appropriate user permissions
-(postgres, Tomcat, Java SDK). You will need to have set up usernames
-and passwords for Postgres first, and these can be
-provided to the setup scripts as `PSQL_USER`, `PSQL_PWD`.
+* [FlyMine](http://www.flymine.org)
+* [FlyMine User Docs](http://flymine.readthedocs.io/en/latest/)
+* [InterMine](http://www.intermine.org)
+* [InterMine Docs](http://intermine.readthedocs.io/en/latest/)
 
 Copyright and Licence
 ------------------------

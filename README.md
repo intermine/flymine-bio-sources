@@ -7,7 +7,7 @@ Master: [![Build Status: master][travis-badge-master]][ci]
 [![Research software impact](http://depsy.org/api/package/pypi/intermine/badge.svg)](http://depsy.org/package/python/intermine)
 [![Conda](https://anaconda.org/intermine/intermine/badges/installer/conda.svg)](https://anaconda.org/bioconda/intermine)
 
-This is a repository of all the data parsers used to load Drosophila data into an InterMine instance (FlyMine). These are fly-specific data, and in addition to the core data parsers available in InterMine. See the [intermine-scripts](http://github.com/intermine/intermine-scripts) respository for the scripts we use to actually download the fly data.
+This is a repository of all the data parsers used to load Drosophila data into an InterMine instance (FlyMine). These are fly-specific data, and in addition to the [core data parsers](http://intermine.readthedocs.io/en/latest/database/data-sources/library/) available in InterMine. See the [intermine-scripts](http://github.com/intermine/intermine-scripts) respository for the scripts we use to actually download the fly data.
 
 * [FlyMine](http://www.flymine.org)
 * [FlyMine User Docs](http://flymine.readthedocs.io/en/latest/)

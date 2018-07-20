@@ -34,7 +34,8 @@ public class AffyProbesConverter extends BioFileConverter
     protected static final Logger LOG = Logger.getLogger(AffyProbesConverter.class);
 
     protected String dataSource, dataSet;
-    private static final String DATASET_1 = "Affymetrix array: GeneChip Drosophila Genome 2.0 Array";
+    private static final String DATASET_1 = "Affymetrix array: GeneChip Drosophila Genome "
+        + "2.0 Array";
     private static final String DATASET_2 = "Affymetrix array: GeneChip Drosophila Genome Array";
     private String orgRefId;
     protected Map<String, String> bioentities = new HashMap<String, String>();

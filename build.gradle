@@ -65,6 +65,11 @@ subprojects {
         defaultInterminePropertiesFile = "default.intermine.bio-test.properties"
     }
 
+    // this model is merged with each flymine data source
+    bioSourceDBModelConfig {
+        globalAdditionsFile = "flymine-global_additions.xml"
+    }
+
     task copyMineProperties() {
         dependsOn 'processResources'
         doLast {

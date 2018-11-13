@@ -42,7 +42,7 @@ public class ImageCloneConverter extends CDNACloneConverter
      */
     public ImageCloneConverter(ItemWriter writer, Model model)
         throws ObjectStoreException, MetaDataException {
-        super(writer, model, "RZPD", "RZPD uniprot data set");
+        super(writer, model, "RZPD", "RZPD uniprot data set", null);
 
         organism = createItem("Organism");
         organism.setAttribute("abbreviation", "HS");

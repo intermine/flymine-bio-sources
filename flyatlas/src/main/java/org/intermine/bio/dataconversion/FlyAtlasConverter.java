@@ -39,7 +39,7 @@ public class FlyAtlasConverter extends BioFileConverter
      */
     public FlyAtlasConverter(ItemWriter writer, Model model) {
         super(writer, model, "University of Glasgow", "FlyAtlas",
-                "myFlyAtlasLicence");
+                "myFlyAtlasLicence", false);
         setupItems();
     }
 

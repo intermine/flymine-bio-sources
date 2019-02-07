@@ -30,7 +30,8 @@ subprojects {
     apply plugin: 'dbmodel'
     apply plugin: 'biosource-dbmodel'
     apply plugin: "checkstyle"
-
+    apply plugin: 'com.jfrog.bintray'
+    
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
 
@@ -119,6 +120,46 @@ subprojects {
         ignoreFailures = true
         forkEvery = 1
     }
+
+    task sourcesJar(type: Jar, dependsOn: classes) {
+        classifier = 'sources'
+        from sourceSets.main.allSource
+    }
+
+    task javadocJar(type: Jar, dependsOn: javadoc) {
+        classifier = 'javadoc'
+        from javadoc.destinationDir
+    }
+
+
+    artifacts {
+        archives sourcesJar
+        archives javadocJar
+    }
+
+    bintray {
+        user = System.getenv('BINTRAY_USER')
+        key = System.getenv('BINTRAY_KEY')
+        dryRun = false //[Default: false] Whether to run this as dry-run, without deploying
+        publish = true //[Default: false] Whether version should be auto published after an upload
+        override = true //[Default: false] Whether to override version artifacts already published
+        pkg {
+            repo = 'flymine-sources'
+            name = project.name
+            userOrg = user
+            licenses = ['LGPL-2.1']
+            vcsUrl = 'https://github.com/intermine/flymine-bio-sources.git'
+            publicDownloadNumbers = true
+            version {
+                name = '2.0.0'
+                desc = 'FlyMine 2.0'
+                vcsTag = 'flymine-2.0.0'
+            }
+        }
+
+        configurations = ['archives']
+    }
+
 }
 
 task testReport(type: TestReport) {

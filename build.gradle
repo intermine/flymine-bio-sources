@@ -31,7 +31,7 @@ subprojects {
     apply plugin: 'biosource-dbmodel'
     apply plugin: "checkstyle"
     apply plugin: 'com.jfrog.bintray'
-    
+
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
 
@@ -84,6 +84,11 @@ subprojects {
 
     jar {
         exclude "intermine.properties"
+    }
+
+    // see http://blog.joda.org/2014/02/turning-off-doclint-in-jdk-8-javadoc.html
+    tasks.withType(Javadoc) {
+        options.addStringOption('Xdoclint:none', '-quiet')
     }
 
     checkstyle {

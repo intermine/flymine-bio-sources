@@ -1,5 +1,3 @@
-import com.sun.org.apache.xalan.internal.xsltc.compiler.Copy
-
 buildscript {
     repositories {
         mavenLocal()
@@ -23,7 +21,7 @@ ext {
 
 subprojects {
     group = 'org.intermine'
-    version = '2.0.0'
+    version = '3.1.0'
 
     apply plugin: 'java'
     apply plugin: 'maven'
@@ -156,9 +154,9 @@ subprojects {
             vcsUrl = 'https://github.com/intermine/flymine-bio-sources.git'
             publicDownloadNumbers = true
             version {
-                name = '2.0.0'
-                desc = 'FlyMine 2.0'
-                vcsTag = 'flymine-2.0.0'
+                name = '3.1.1'
+                desc = 'FlyMine 3.1.1'
+                vcsTag = 'flymine-3.1.1'
             }
         }
 

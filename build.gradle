@@ -134,17 +134,6 @@ subprojects {
         forkEvery = 1
     }
 
-    task sourcesJar(type: Jar, dependsOn: classes) {
-        classifier = 'sources'
-        from sourceSets.main.allSource
-    }
-
-    task javadocJar(type: Jar, dependsOn: javadoc) {
-        classifier = 'javadoc'
-        from javadoc.destinationDir
-    }
-
-
     artifacts {
         archives sourcesJar
         archives javadocJar
@@ -164,9 +153,9 @@ subprojects {
             vcsUrl = 'https://github.com/intermine/flymine-bio-sources.git'
             publicDownloadNumbers = true
             version {
-                name = '3.1.1'
-                desc = 'FlyMine 3.1.1'
-                vcsTag = 'flymine-3.1.1'
+                name = '4.0.0'
+                desc = 'FlyMine 4.0.0'
+                vcsTag = 'flymine-4.0.0'
             }
         }
 

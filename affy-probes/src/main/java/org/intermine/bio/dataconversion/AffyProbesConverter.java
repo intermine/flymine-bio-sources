@@ -53,7 +53,7 @@ public class AffyProbesConverter extends BioFileConverter
      */
     public AffyProbesConverter(ItemWriter writer, Model model)
         throws ObjectStoreException {
-        super(writer, model, null, null);
+        super(writer, model, null, null, "myAffyLicence");
 
         dataSource = getDataSource("Ensembl");
         orgRefId = getOrganism(TAXON_FLY);

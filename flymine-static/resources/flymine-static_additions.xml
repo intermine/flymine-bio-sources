@@ -301,6 +301,7 @@
 	<attribute name="url" type="java.lang.String"/>
 	<attribute name="name" type="java.lang.String"/>
 	<attribute name="version" type="java.lang.String"/>
+	<attribute name="licence" type="java.lang.String" term="http://purl.org/dc/terms/license"/>
 	<reference name="dataSource" referenced-type="DataSource" reverse-reference="dataSets"/>
 	<reference name="publication" referenced-type="Publication"/>
 	<collection name="bioEntities" referenced-type="BioEntity" reverse-reference="dataSets"/>

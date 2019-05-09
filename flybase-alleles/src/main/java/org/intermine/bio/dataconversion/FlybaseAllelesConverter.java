@@ -43,7 +43,7 @@ public class FlybaseAllelesConverter extends BioFileConverter
      * @param model the Model
      */
     public FlybaseAllelesConverter(ItemWriter writer, Model model) {
-        super(writer, model, DATA_SOURCE_NAME, DATASET_TITLE);
+        super(writer, model, DATA_SOURCE_NAME, DATASET_TITLE, "myFlyBaseAllelesLicence");
     }
 
     /**

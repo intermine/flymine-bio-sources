@@ -43,7 +43,8 @@ public class AffyConverter extends CDNACloneConverter
      */
     public AffyConverter(ItemWriter writer, Model model)
         throws ObjectStoreException, MetaDataException {
-        super(writer, model, "Affymetrix GeneChip", "Affymetrix HG-U133A annotation data set");
+        super(writer, model, "Affymetrix GeneChip",
+                "Affymetrix HG-U133A annotation data set", "myAffyLicence");
 
         organism = createItem("Organism");
         organism.setAttribute("abbreviation", "HS");

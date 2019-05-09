@@ -52,7 +52,7 @@ public class FlybaseExpressionConverter extends BioFileConverter
      * @param model the Model
      */
     public FlybaseExpressionConverter(ItemWriter writer, Model model) {
-        super(writer, model, DATA_SOURCE_NAME, DATASET_TITLE);
+        super(writer, model, DATA_SOURCE_NAME, DATASET_TITLE, "myFlyBaseExpressionLicence");
 
         organism = createItem("Organism");
         organism.setAttribute("taxonId", TAXON_FLY);

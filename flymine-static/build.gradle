@@ -30,6 +30,11 @@ processResources {
     from('.') { include ("*.properties")}
 }
 
+artifacts {
+    archives sourcesJar
+    archives javadocJar
+}
+
 artifactory {
     contextUrl = 'https://oss.jfrog.org/artifactory/'
     resolve {

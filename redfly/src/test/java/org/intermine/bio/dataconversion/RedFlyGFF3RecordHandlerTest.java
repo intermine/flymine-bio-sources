@@ -52,7 +52,7 @@ public class RedFlyGFF3RecordHandlerTest extends ItemsTestCase
         handler.rslv.addResolverEntry("7227", "FBgn0002", Collections.singleton("FBgn0003339"));
         // call the GFF3Converter constructor to initialise the handler
         converter = new GFF3Converter(writer, seqClsName, taxonId, dataSourceName,
-                          dataSetTitle, tgtModel, handler, null);
+                          dataSetTitle, tgtModel, handler, null, null);
     }
 
     public void tearDown() throws Exception {

@@ -51,7 +51,7 @@ public class RnaiConverter extends BioFileConverter
      * @param model the Model
      */
     public RnaiConverter(ItemWriter writer, Model model) {
-        super(writer, model, DATA_SOURCE_NAME, DATASET_TITLE, "myRNAiLicence");
+        super(writer, model, DATA_SOURCE_NAME, DATASET_TITLE, null);
     }
 
     /**

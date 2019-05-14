@@ -51,7 +51,7 @@ public class MirandaConverterTest extends ItemsTestCase
         handler.rslv.addResolverEntry("7227", "FBgn002", Collections.singleton("mir-312"));
         handler.rslv.addResolverEntry("7227", "FBtr0089256", Collections.singleton("CG11023-RA"));
         converter = new GFF3Converter(writer, seqClsName, "7227", dataSourceName,
-                                      dataSetTitle, tgtModel, handler, null);
+                                      dataSetTitle, tgtModel, handler, null, null);
     }
 
     protected void tearDown() throws Exception {

@@ -21,6 +21,9 @@
 </item>
 <item id="0_2" class="Ontology">
 <attribute name="name" value="ImaGO"/>
+    <collection name="dataSets">
+        <reference ref_id="2_1"/>
+    </collection>
 </item>
 <item id="5_13" class="DevelopmentTerm">
 <attribute name="name" value="embryonic stage 13"/>
@@ -132,6 +135,9 @@
 </item>
 <item id="0_3" class="Ontology">
 <attribute name="name" value="Fly Development"/>
+    <collection name="dataSets">
+        <reference ref_id="2_1"/>
+    </collection>
 </item>
 <item id="5_12" class="DevelopmentTerm">
 <attribute name="name" value="embryonic stage 12"/>

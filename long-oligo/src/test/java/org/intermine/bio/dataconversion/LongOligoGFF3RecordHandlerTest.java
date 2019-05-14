@@ -43,7 +43,7 @@ public class LongOligoGFF3RecordHandlerTest extends ItemsTestCase
         seqHandler.rslv = IdResolverService.getMockIdResolver("mRNA");
         seqHandler.rslv.addResolverEntry("7227", "FBtr0075391", Collections.singleton("CG4314-RA"));
         converter = new GFF3Converter(writer, seqClsName, taxonId, dataSourceName, dataSetTitle,
-                                      tgtModel, handler, seqHandler);
+                                      tgtModel, handler, seqHandler, null);
     }
 
     public void tearDown() throws Exception {

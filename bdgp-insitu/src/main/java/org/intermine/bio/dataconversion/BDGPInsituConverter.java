@@ -67,7 +67,7 @@ public class BDGPInsituConverter extends BioFileConverter
      * @throws ObjectStoreException if an error occurs in storing
      */
     public BDGPInsituConverter(ItemWriter writer, Model model) throws ObjectStoreException {
-        super(writer, model, "BDGP", "BDGP in situ data set", "myBDGPLicence");
+        super(writer, model, "BDGP", "BDGP in situ data set", null);
 
         orgDrosophila = createItem("Organism");
         orgDrosophila.setAttribute("taxonId", TAXON_FLY);

@@ -53,7 +53,7 @@ public class FlyRegGFF3RecordHandlerTest extends ItemsTestCase
         handler.rslv.addResolverEntry("7227", "FBgn002", Collections.singleton("dl"));
 
         converter = new GFF3Converter(writer, seqClsName, taxonId, dataSourceName,
-                                      dataSetTitle, tgtModel, handler, null);
+                                      dataSetTitle, tgtModel, handler, null, null);
 
     }
 

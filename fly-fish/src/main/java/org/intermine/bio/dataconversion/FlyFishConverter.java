@@ -52,7 +52,7 @@ public class FlyFishConverter extends BioFileConverter
      */
     public FlyFishConverter(ItemWriter writer, Model model)
         throws ObjectStoreException {
-        super(writer, model, "fly-FISH", "fly-Fish data set", "myFlyFishLicence");
+        super(writer, model, "fly-FISH", "fly-Fish data set", null);
 
         orgDrosophila = createItem("Organism");
         orgDrosophila.addAttribute(new Attribute("taxonId", TAXON_FLY));

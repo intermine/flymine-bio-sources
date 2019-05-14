@@ -35,13 +35,13 @@ public abstract class CDNACloneConverter extends BioFileConverter
      * @param model the Model
      * @param dataSourceName the DataSource name
      * @param dataSetTitle the DataSet title
+     * @param licence the licence covering these data
      * @throws ObjectStoreException if an error occurs in storing
      * @throws MetaDataException if cannot generate model
      */
     public CDNACloneConverter(ItemWriter writer, Model model,String dataSourceName,
                               String dataSetTitle, String licence)
-        throws ObjectStoreException,
-               MetaDataException {
+        throws ObjectStoreException, MetaDataException {
         super(writer, model, dataSourceName, dataSetTitle, licence);
     }
 

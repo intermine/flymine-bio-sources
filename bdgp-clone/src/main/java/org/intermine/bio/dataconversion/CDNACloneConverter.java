@@ -39,7 +39,7 @@ public abstract class CDNACloneConverter extends BioFileConverter
      * @throws ObjectStoreException if an error occurs in storing
      * @throws MetaDataException if cannot generate model
      */
-    public CDNACloneConverter(ItemWriter writer, Model model,String dataSourceName,
+    public CDNACloneConverter(ItemWriter writer, Model model, String dataSourceName,
                               String dataSetTitle, String licence)
         throws ObjectStoreException, MetaDataException {
         super(writer, model, dataSourceName, dataSetTitle, licence);

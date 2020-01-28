@@ -3,7 +3,7 @@
 		<collection name="transcripts" referenced-type="Transcript" reverse-reference="introns"/>
 		<collection name="genes" referenced-type="Gene" reverse-reference="introns"/>
 	</class>
-	<class name="Interaction" is-interface="true">
+	<class name="Interaction" is-interface="true" term="http://purl.obolibrary.org/obo/MI_0000">
 		<reference name="participant2" referenced-type="BioEntity"/>
 		<reference name="participant1" referenced-type="BioEntity" reverse-reference="interactions"/>
 		<collection name="details" referenced-type="InteractionDetail" reverse-reference="interaction"/>
@@ -11,17 +11,17 @@
 	<class name="SyntenicRegion" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO_0005858">
 		<reference name="syntenyBlock" referenced-type="SyntenyBlock" reverse-reference="syntenicRegions"/>
 	</class>
-	<class name="Protocol" is-interface="true">
+	<class name="Protocol" is-interface="true" term="http://purl.obolibrary.org/obo/NCIT_C42651">
 		<attribute name="description" type="java.lang.String"/>
 		<attribute name="name" type="java.lang.String"/>
 	</class>
-	<class name="ProbeSet" extends="SequenceFeature" is-interface="true">
+	<class name="ProbeSet" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/NCIT_C43523">
 		<attribute name="description" type="java.lang.String"/>
 		<collection name="results" referenced-type="MicroArrayResult" reverse-reference="material"/>
 		<collection name="transcripts" referenced-type="Transcript" reverse-reference="probeSets"/>
 		<collection name="genes" referenced-type="Gene" reverse-reference="probeSets"/>
 	</class>
-	<class name="RNAiScreen" is-interface="true">
+	<class name="RNAiScreen" is-interface="true" term="http://purl.obolibrary.org/obo/FBcv_0003077">
 		<attribute name="bioSourceType" type="java.lang.String"/>
 		<attribute name="method" type="java.lang.String"/>
 		<attribute name="identifier" type="java.lang.String"/>
@@ -35,7 +35,7 @@
 		<reference name="publication" referenced-type="Publication"/>
 		<collection name="rnaiResults" referenced-type="RNAiResult" reverse-reference="rnaiScreen"/>
 	</class>
-	<class name="MicroArrayAssay" is-interface="true">
+	<class name="MicroArrayAssay" is-interface="true" term="http://purl.obolibrary.org/obo/OBI_0001985">
 		<attribute name="sample1" type="java.lang.String"/>
 		<attribute name="sample2" type="java.lang.String"/>
 		<attribute name="description" type="java.lang.String"/>
@@ -45,11 +45,11 @@
 		<collection name="samples" referenced-type="Sample" reverse-reference="assays"/>
 		<collection name="results" referenced-type="MicroArrayResult" reverse-reference="assays"/>
 	</class>
-	<class name="OrthologueEvidence" is-interface="true">
+	<class name="OrthologueEvidence" is-interface="true" term="http://purl.obolibrary.org/obo/ECO_0000000">
 		<reference name="evidenceCode" referenced-type="OrthologueEvidenceCode"/>
 		<collection name="publications" referenced-type="Publication"/>
 	</class>
-	<class name="Stock" extends="BioEntity" is-interface="true">
+	<class name="Stock" extends="BioEntity" is-interface="true" term="http://purl.obolibrary.org/obo/FBcv_0000223">
 		<attribute name="stockCenter" type="java.lang.String"/>
 		<attribute name="type" type="java.lang.String"/>
 		<collection name="alleles" referenced-type="Allele" reverse-reference="stocks"/>
@@ -58,7 +58,7 @@
 	<class name="BindingSite" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000409">
 		<reference name="factor" referenced-type="Gene"/>
 	</class>
-	<class name="Homologue" is-interface="true">
+	<class name="Homologue" is-interface="true" term="http://purl.obolibrary.org/obo/NCIT_C28709">
 		<attribute name="type" type="java.lang.String"/>
 		<attribute name="bootstrapScore" type="java.lang.Integer"/>
 		<reference name="gene" referenced-type="Gene" reverse-reference="homologues"/>
@@ -102,7 +102,7 @@
 		<collection name="miRNAinteractions" referenced-type="MiRNATarget" reverse-reference="target"/>
 		<collection name="cDNAClones" referenced-type="CDNAClone" reverse-reference="MRNA"/>
 	</class>
-	<class name="RNAiResult" is-interface="true">
+	<class name="RNAiResult" is-interface="true" term="http://purl.obolibrary.org/obo/ECO_0000019">
 		<attribute name="phenotype" type="java.lang.String"/>
 		<attribute name="reagentId" type="java.lang.String"/>
 		<attribute name="score" type="java.lang.String"/>
@@ -110,7 +110,7 @@
 		<reference name="gene" referenced-type="Gene" reverse-reference="rnaiResults"/>
 		<reference name="rnaiScreen" referenced-type="RNAiScreen" reverse-reference="rnaiResults"/>
 	</class>
-	<class name="GOAnnotation" extends="OntologyAnnotation" is-interface="true">
+	<class name="GOAnnotation" extends="OntologyAnnotation" is-interface="true" term=" http://purl.obolibrary.org/obo/OGG_0000000029">
 		<attribute name="annotationExtension" type="java.lang.String"/>
 	</class>
 	<class name="MobileGeneticElement" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0001037"></class>
@@ -147,14 +147,14 @@
 		<reference name="subject" referenced-type="BioEntity" reverse-reference="synonyms"/>
 		<collection name="dataSets" referenced-type="DataSet"/>
 	</class>
-	<class name="InteractionRegion" is-interface="true">
+	<class name="InteractionRegion" is-interface="true" term="http://purl.obolibrary.org/obo/SO_0000001">
 		<attribute name="startStatus" type="java.lang.String"/>
 		<attribute name="endStatus" type="java.lang.String"/>
 		<reference name="ontologyTerm" referenced-type="OntologyTerm"/>
 		<reference name="interaction" referenced-type="InteractionDetail" reverse-reference="interactingRegions"/>
 		<collection name="locations" referenced-type="Location"/>
 	</class>
-	<class name="MRNAExpressionResult" is-interface="true">
+	<class name="MRNAExpressionResult" is-interface="true" term="http://www.bioassayontology.org/bao#BAO_0002138">
 		<attribute name="expressed" type="java.lang.Boolean"/>
 		<attribute name="stageRange" type="java.lang.String"/>
 		<reference name="gene" referenced-type="Gene" reverse-reference="mRNAExpressionResults"/>
@@ -253,7 +253,7 @@
 		<attribute name="type" type="java.lang.String" term="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25284"/>
 		<collection name="publications" referenced-type="Publication"/>
 	</class>
-	<class name="CVTerm" extends="OntologyTerm" is-interface="true"></class>
+	<class name="CVTerm" extends="OntologyTerm" is-interface="true" term="http://edamontology.org/data_0966"></class>
 	<class name="Tissue" is-interface="true">
 		<attribute name="name" type="java.lang.String"/>
 		<collection name="expressionResults" referenced-type="FlyAtlasResult" reverse-reference="tissue"/>
@@ -286,14 +286,14 @@
 		<collection name="TFBindingSites" referenced-type="TFBindingSite" reverse-reference="CRM"/>
 		<collection name="anatomyOntology" referenced-type="AnatomyTerm"/>
 	</class>
-	<class name="Component" is-interface="true">
+	<class name="Component" is-interface="true" term="http://purl.obolibrary.org/obo/NCIT_C45994">
 		<attribute name="name" type="java.lang.String"/>
 		<reference name="protein" referenced-type="Protein" reverse-reference="components"/>
 	</class>
 	<class name="NaturalTransposableElement" extends="TransposableElement" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000797">
 		<collection name="transposableElements" referenced-type="TransposableElement" reverse-reference="insertedElement"/>
 	</class>
-	<class name="MicroArrayExperiment" is-interface="true">
+	<class name="MicroArrayExperiment" is-interface="true" term="http://semanticscience.org/resource/SIO_001076">
 		<attribute name="identifier" type="java.lang.String"/>
 		<attribute name="description" type="java.lang.String"/>
 		<attribute name="name" type="java.lang.String"/>
@@ -301,7 +301,7 @@
 		<collection name="assays" referenced-type="MicroArrayAssay" reverse-reference="experiment"/>
 		<collection name="results" referenced-type="MicroArrayResult" reverse-reference="experiment"/>
 	</class>
-	<class name="AnatomyTerm" extends="OntologyTerm" is-interface="true"></class>
+	<class name="AnatomyTerm" extends="OntologyTerm" is-interface="true" term ="http://edamontology.org/data_0966"></class>
 	<class name="TRNA" extends="NcRNA" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000253"></class>
 	<class name="Author" is-interface="true" term="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C42781">
 		<attribute name="firstName" type="java.lang.String" term="http://semanticscience.org/resource/SIO_000181"/>
@@ -316,7 +316,7 @@
 		<collection name="protocols" referenced-type="Protocol"/>
 		<collection name="parameters" referenced-type="TreatmentParameter" reverse-reference="treatment"/>
 	</class>
-	<class name="DOEvidence" is-interface="true">
+	<class name="DOEvidence" is-interface="true" term="http://purl.obolibrary.org/obo/ECO_0000000">
 		<attribute name="evidence" type="java.lang.String"/>
 	</class>
 	<class name="ThreePrimeUTR" extends="UTR" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000205"></class>

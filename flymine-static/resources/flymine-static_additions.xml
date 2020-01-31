@@ -349,7 +349,7 @@
 	<class name="SequenceVariant" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0001060">
 		<collection name="genes" referenced-type="Gene"/>
 	</class>
-	<class name="PhenotypeAnnotation" is-interface="true">
+	<class name="PhenotypeAnnotation" is-interface="true" term="http://edamontology.org/operation_0226">
 		<attribute name="description" type="java.lang.String"/>
 		<attribute name="annotationType" type="java.lang.String"/>
 		<reference name="allele" referenced-type="Allele" reverse-reference="phenotypeAnnotations"/>
@@ -401,7 +401,7 @@
 	<class name="Image" is-interface="true">
 		<attribute name="url" type="java.lang.String"/>
 	</class>
-	<class name="DOTerm" extends="OntologyTerm" is-interface="true"></class>
+	<class name="DOTerm" extends="OntologyTerm" is-interface="true" term="http://edamontology.org/data_0966"></class>
 	<class name="RNASeqResult" is-interface="true">
 		<attribute name="expressionScore" type="java.lang.Double"/>
 		<attribute name="expressionLevel" type="java.lang.String"/>
@@ -420,7 +420,7 @@
 	</class>
 	<class name="DOAnnotation" extends="OntologyAnnotation" is-interface="true"></class>
 	<class name="PointMutation" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO:1000008"></class>
-	<class name="GoldenPathRegion" extends="SequenceFeature" is-interface="true"></class>
+	<class name="GoldenPathRegion" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO_0000468"></class>
 	<class name="InteractionDetail" is-interface="true">
 		<attribute name="role2" type="java.lang.String"/>
 		<attribute name="type" type="java.lang.String"/>
@@ -559,7 +559,7 @@
 		<collection name="characteristics" referenced-type="SampleCharacteristic"/>
 		<collection name="assays" referenced-type="MicroArrayAssay" reverse-reference="samples"/>
 	</class>
-	<class name="ECNumber" is-interface="true">
+	<class name="ECNumber" is-interface="true" term="http://edamontology.org/data_1011">
 		<attribute name="identifier" type="java.lang.String"/>
 		<attribute name="description" type="java.lang.String"/>
 		<collection name="proteins" referenced-type="Protein" reverse-reference="ecNumbers"/>
@@ -578,11 +578,11 @@
 		<attribute name="value" type="java.lang.String"/>
 		<reference name="treatment" referenced-type="Treatment" reverse-reference="parameters"/>
 	</class>
-	<class name="OrthologueEvidenceCode" is-interface="true">
+	<class name="OrthologueEvidenceCode" is-interface="true" term="http://purl.obolibrary.org/obo/ECO_0000000">
 		<attribute name="abbreviation" type="java.lang.String"/>
 		<attribute name="name" type="java.lang.String"/>
 	</class>
-	<class name="GOEvidenceCode" extends="OntologyAnnotationEvidenceCode" is-interface="true"></class>
+	<class name="GOEvidenceCode" extends="OntologyAnnotationEvidenceCode" is-interface="true" term="http://purl.obolibrary.org/obo/ECO_0000000"></class>
 	<class name="SequenceCollection" extends="BioEntity" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0001260">
 		<reference name="sequenceOntologyTerm" referenced-type="SOTerm"/>
 	</class>
@@ -591,7 +591,7 @@
 		<attribute name="residues" type="org.intermine.objectstore.query.ClobAccess" term="http://edamontology.org/data_2044"/>
 		<attribute name="length" type="int" term="http://semanticscience.org/resource/SIO_000041"/>
 	</class>
-	<class name="GOEvidence" extends="OntologyEvidence" is-interface="true">
+	<class name="GOEvidence" extends="OntologyEvidence" is-interface="true" term="http://purl.obolibrary.org/obo/ECO_0000000">
 		<attribute name="withText" type="java.lang.String"/>
 		<collection name="with" referenced-type="BioEntity"/>
 	</class>

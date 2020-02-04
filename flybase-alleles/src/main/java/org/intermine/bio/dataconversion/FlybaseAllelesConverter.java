@@ -86,20 +86,21 @@ public class FlybaseAllelesConverter extends BioFileConverter
             Item allele = getAllele(alleleIdentifier, symbol);
 
             String qualifier = line[3];
-            //String diseaseName = line[5];
+            String diseaseName = line[5];
             String diseaseIdentifier = line[4];
             String evidence = line[10];
 
-            LOG.info("ID " + alleleIdentifier + " EV " + evidence);
+            // LOG.info("ID " + alleleIdentifier + " EV " + evidence);
 
-
-            String doTerm = getDisease(diseaseIdentifier);
+            String doTerm = getDisease(diseaseIdentifier, diseaseName);
 
             Item evidenceTerm = createItem("DOEvidence");
             if (StringUtils.isNotEmpty(evidence)) {
-                LOG.info("YYY " + evidence);
                 evidenceTerm.setAttribute("evidence", evidence);
             }
+            // TODO: add ref to DOEvidence
+            // bio/sources/do/resources/do_additions.xml
+            //evidenceTerm.setReference("ontologyTerm", doTerm);
             store(evidenceTerm);
 
             Item doAnnotation = createItem("DOAnnotation");
@@ -124,11 +125,14 @@ public class FlybaseAllelesConverter extends BioFileConverter
         return item;
     }
 
-    private String getDisease(String identifier) throws ObjectStoreException {
+    private String getDisease(String identifier, String name) throws ObjectStoreException {
         String refId = diseases.get(identifier);
         if (refId == null) {
             Item item = createItem("DOTerm");
             item.setAttribute("identifier", identifier);
+            if (StringUtils.isNotEmpty(name)) {
+                item.setAttribute("name", name);
+            }
             store(item);
             refId = item.getIdentifier();
             diseases.put(identifier, refId);

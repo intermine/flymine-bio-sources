@@ -16,6 +16,7 @@ import java.util.Iterator;
 import java.util.Map;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.log4j.Logger;
 import org.intermine.dataconversion.ItemWriter;
 import org.intermine.metadata.Model;
 import org.intermine.objectstore.ObjectStoreException;
@@ -31,6 +32,7 @@ import org.intermine.xml.full.Item;
 public class FlybaseAllelesConverter extends BioFileConverter
 {
 
+    private static final Logger LOG = Logger.getLogger(FlybaseAllelesConverter.class);
 
     private static final String DATASET_TITLE = "Alleles and phenotypes";
     private static final String DATA_SOURCE_NAME = "FlyBase";
@@ -71,23 +73,31 @@ public class FlybaseAllelesConverter extends BioFileConverter
         while (lineIter.hasNext()) {
             String[] line = (String[]) lineIter.next();
 
-            if (line.length < 6) {
+            if (line.length < 10) {
                 continue;
             }
 
-            String alleleIdentifier = line[0];
-            String symbol = line[1];
+            if (line[6].isEmpty()) {
+                continue;
+            }
+
+            String alleleIdentifier = line[6];
+            String symbol = line[7];
             Item allele = getAllele(alleleIdentifier, symbol);
 
-            String qualifier = line[2];
-            //String diseaseName = line[3];
+            String qualifier = line[3];
+            //String diseaseName = line[5];
             String diseaseIdentifier = line[4];
-            String evidence = line[5];
+            String evidence = line[10];
+
+            LOG.info("ID " + alleleIdentifier + " EV " + evidence);
+
 
             String doTerm = getDisease(diseaseIdentifier);
 
             Item evidenceTerm = createItem("DOEvidence");
             if (StringUtils.isNotEmpty(evidence)) {
+                LOG.info("YYY " + evidence);
                 evidenceTerm.setAttribute("evidence", evidence);
             }
             store(evidenceTerm);

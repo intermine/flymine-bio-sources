@@ -342,7 +342,7 @@
 	<class name="OverlappingESTSet" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0001262">
 		<collection name="ESTs" referenced-type="EST" reverse-reference="overlappingESTSets"/>
 	</class>
-	<class name="Mutagen" is-interface="true">
+	<class name="Mutagen" is-interface="true" term="http://purl.obolibrary.org/obo/NCIT_C672">
 		<attribute name="description" type="java.lang.String"/>
 		<collection name="alleles" referenced-type="Allele" reverse-reference="mutagens"/>
 	</class>
@@ -398,7 +398,7 @@
 		<collection name="transcripts" referenced-type="Transcript" reverse-reference="protein"/>
 		<collection name="features" referenced-type="UniProtFeature" reverse-reference="protein"/>
 	</class>
-	<class name="Image" is-interface="true">
+	<class name="Image" is-interface="true" term="http://edamontology.org/data_2968">
 		<attribute name="url" type="java.lang.String"/>
 	</class>
 	<class name="DOTerm" extends="OntologyTerm" is-interface="true" term="http://edamontology.org/data_0966"></class>
@@ -418,7 +418,7 @@
 		<reference name="feature" referenced-type="BioEntity" reverse-reference="locations"/>
 		<collection name="dataSets" referenced-type="DataSet"/>
 	</class>
-	<class name="DOAnnotation" extends="OntologyAnnotation" is-interface="true"></class>
+	<class name="DOAnnotation" extends="OntologyAnnotation" is-interface="true" term="http://edamontology.org/operation_0226"></class>
 	<class name="PointMutation" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO:1000008"></class>
 	<class name="GoldenPathRegion" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO_0000468"></class>
 	<class name="InteractionDetail" is-interface="true">
@@ -481,7 +481,7 @@
 		<reference name="source" referenced-type="DataSource"/>
 		<reference name="subject" referenced-type="BioEntity" reverse-reference="crossReferences"/>
 	</class>
-	<class name="TFmodule" extends="RegulatoryRegion" is-interface="true"></class>
+	<class name="TFmodule" extends="RegulatoryRegion" is-interface="true" term="http://purl.obolibrary.org/obo/SO_0000235"></class>
 	<class name="OntologyTerm" is-interface="true" term="http://semanticscience.org/resource/SIO_000275">
 		<attribute name="identifier" type="java.lang.String" term="http://semanticscience.org/resource/SIO_000675"/>
 		<attribute name="description" type="java.lang.String" term="http://semanticscience.org/resource/SIO_000136"/>
@@ -496,7 +496,7 @@
 		<collection name="relations" referenced-type="OntologyRelation"/>
 		<collection name="dataSets" referenced-type="DataSet"/>
 	</class>
-	<class name="GOTerm" extends="OntologyTerm" is-interface="true"></class>
+	<class name="GOTerm" extends="OntologyTerm" is-interface="true" term="http://edamontology.org/data_0966"></class>
 	<class name="SampleCharacteristic" is-interface="true">
 		<attribute name="type" type="java.lang.String"/>
 		<attribute name="value" type="java.lang.String"/>
@@ -531,7 +531,7 @@
 		<attribute name="available" type="java.lang.Boolean"/>
 		<attribute name="type" type="java.lang.String"/>
 	</class>
-	<class name="FlyAtlasResult" extends="MicroArrayResult" is-interface="true">
+	<class name="FlyAtlasResult" extends="MicroArrayResult" is-interface="true" term="http://edamontology.org/data_3111">
 		<attribute name="enrichment" type="java.lang.Double"/>
 		<attribute name="presentCall" type="java.lang.Integer"/>
 		<attribute name="mRNASignal" type="java.lang.Double"/>
@@ -621,7 +621,7 @@
 		<reference name="transcript" referenced-type="Transcript" reverse-reference="CDSs"/>
 		<reference name="protein" referenced-type="Protein" reverse-reference="CDSs"/>
 	</class>
-	<class name="MicroArrayResult" is-interface="true">
+	<class name="MicroArrayResult" is-interface="true" term="http://edamontology.org/data_3111">
 		<attribute name="isControl" type="java.lang.Boolean"/>
 		<attribute name="type" type="java.lang.String"/>
 		<attribute name="scale" type="java.lang.String"/>

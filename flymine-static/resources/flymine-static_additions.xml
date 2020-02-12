@@ -442,7 +442,7 @@
 	<class name="TransposableElement" extends="MobileGeneticElement" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000101">
 		<reference name="insertedElement" referenced-type="NaturalTransposableElement" reverse-reference="transposableElements"/>
 	</class>
-	<class name="DatabaseReference" is-interface="true">
+	<class name="DatabaseReference" is-interface="true" term-"http://semanticscience.org/resource/SIO_001171">
 		<attribute name="identifier" type="java.lang.String"/>
 		<reference name="subject" referenced-type="Publication" reverse-reference="crossReferences"/>
 		<reference name="source" referenced-type="DataSource"/>
@@ -468,7 +468,7 @@
 	<class name="MRNAExpressionTerm" extends="OntologyTerm" is-interface="true">
 		<attribute name="type" type="java.lang.String"/>
 	</class>
-	<class name="OntologyRelation" is-interface="true">
+	<class name="OntologyRelation" is-interface="true" term="http://purl.obolibrary.org/obo/NCIT_C42727">
 		<attribute name="redundant" type="java.lang.Boolean"/>
 		<attribute name="direct" type="java.lang.Boolean"/>
 		<attribute name="relationship" type="java.lang.String"/>
@@ -497,7 +497,7 @@
 		<collection name="dataSets" referenced-type="DataSet"/>
 	</class>
 	<class name="GOTerm" extends="OntologyTerm" is-interface="true" term="http://edamontology.org/data_0966"></class>
-	<class name="SampleCharacteristic" is-interface="true">
+	<class name="SampleCharacteristic" is-interface="true" term="http://purl.obolibrary.org/obo/NCIT_C25447">
 		<attribute name="type" type="java.lang.String"/>
 		<attribute name="value" type="java.lang.String"/>
 		<reference name="ontologyTerm" referenced-type="OntologyTerm"/>
@@ -539,7 +539,7 @@
 		<attribute name="mRNASignalSEM" type="java.lang.Double"/>
 		<reference name="tissue" referenced-type="Tissue" reverse-reference="expressionResults"/>
 	</class>
-	<class name="Pathway" is-interface="true">
+	<class name="Pathway" is-interface="true" term="http://purl.obolibrary.org/obo/NCIT_C54214">
 		<attribute name="identifier" type="java.lang.String"/>
 		<attribute name="description" type="java.lang.String"/>
 		<attribute name="curated" type="java.lang.Boolean"/>
@@ -549,7 +549,7 @@
 		<collection name="proteins" referenced-type="Protein"/>
 		<collection name="dataSets" referenced-type="DataSet"/>
 	</class>
-	<class name="InteractionTerm" extends="OntologyTerm" is-interface="true"></class>
+	<class name="InteractionTerm" extends="OntologyTerm" is-interface="true" term="http://purl.obolibrary.org/obo/MI_0001"></class>
 	<class name="Sample" extends="BioEntity" is-interface="true">
 		<attribute name="materialType" type="java.lang.String"/>
 		<attribute name="description" type="java.lang.String"/>
@@ -572,7 +572,7 @@
 		<reference name="MRNA" referenced-type="MRNA"/>
 		<collection name="results" referenced-type="MicroArrayResult"/>
 	</class>
-	<class name="TreatmentParameter" is-interface="true">
+	<class name="TreatmentParameter" is-interface="true" term="http://semanticscience.org/resource/SIO_000367">
 		<attribute name="units" type="java.lang.String"/>
 		<attribute name="type" type="java.lang.String"/>
 		<attribute name="value" type="java.lang.String"/>
@@ -595,7 +595,7 @@
 		<attribute name="withText" type="java.lang.String"/>
 		<collection name="with" referenced-type="BioEntity"/>
 	</class>
-	<class name="ProteinDomain" extends="BioEntity" is-interface="true">
+	<class name="ProteinDomain" extends="BioEntity" is-interface="true" term="http://purl.obolibrary.org/obo/NCIT_C13379">
 		<attribute name="description" type="java.lang.String"/>
 		<attribute name="identifier" type="java.lang.String"/>
 		<attribute name="type" type="java.lang.String"/>

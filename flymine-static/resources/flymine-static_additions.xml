@@ -12,24 +12,24 @@
 		<reference name="syntenyBlock" referenced-type="SyntenyBlock" reverse-reference="syntenicRegions"/>
 	</class>
 	<class name="Protocol" is-interface="true" term="http://purl.obolibrary.org/obo/NCIT_C42651">
-		<attribute name="description" type="java.lang.String"/>
-		<attribute name="name" type="java.lang.String"/>
+		<attribute name="description" type="java.lang.String" term="http://semanticscience.org/resource/SIO_000136"/>
+		<attribute name="name" type="java.lang.String" term="http://edamontology.org/data_2099"/>
 	</class>
 	<class name="ProbeSet" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/NCIT_C43523">
-		<attribute name="description" type="java.lang.String"/>
+		<attribute name="description" type="java.lang.String" term="http://semanticscience.org/resource/SIO_000136"/>
 		<collection name="results" referenced-type="MicroArrayResult" reverse-reference="material"/>
 		<collection name="transcripts" referenced-type="Transcript" reverse-reference="probeSets"/>
 		<collection name="genes" referenced-type="Gene" reverse-reference="probeSets"/>
 	</class>
 	<class name="RNAiScreen" is-interface="true" term="http://purl.obolibrary.org/obo/FBcv_0003077">
-		<attribute name="bioSourceType" type="java.lang.String"/>
+		<attribute name="bioSourceType" type="java.lang.String" term="http://purl.obolibrary.org/obo/NCIT_C70699"/>
 		<attribute name="method" type="java.lang.String"/>
 		<attribute name="identifier" type="java.lang.String"/>
-		<attribute name="bioSourceName" type="java.lang.String"/>
+		<attribute name="bioSourceName" type="java.lang.String" term="http://purl.obolibrary.org/obo/NCIT_C70699"/>
 		<attribute name="scoreType" type="java.lang.String"/>
 		<attribute name="assay" type="java.lang.String"/>
 		<attribute name="scoreCutoff" type="java.lang.String"/>
-		<attribute name="name" type="java.lang.String"/>
+		<attribute name="name" type="java.lang.String" term="http://edamontology.org/data_2099"/>
 		<attribute name="reagentType" type="java.lang.String"/>
 		<attribute name="library" type="java.lang.String"/>
 		<reference name="publication" referenced-type="Publication"/>
@@ -38,9 +38,9 @@
 	<class name="MicroArrayAssay" is-interface="true" term="http://purl.obolibrary.org/obo/OBI_0001985">
 		<attribute name="sample1" type="java.lang.String"/>
 		<attribute name="sample2" type="java.lang.String"/>
-		<attribute name="description" type="java.lang.String"/>
+		<attribute name="description" type="java.lang.String" term="http://semanticscience.org/resource/SIO_000136"/>
 		<attribute name="displayOrder" type="java.lang.Integer"/>
-		<attribute name="name" type="java.lang.String"/>
+		<attribute name="name" type="java.lang.String" term="http://edamontology.org/data_2099"/>
 		<reference name="experiment" referenced-type="MicroArrayExperiment" reverse-reference="assays"/>
 		<collection name="samples" referenced-type="Sample" reverse-reference="assays"/>
 		<collection name="results" referenced-type="MicroArrayResult" reverse-reference="assays"/>
@@ -125,9 +125,9 @@
 	</class>
 	<class name="ChromosomalInversion" extends="ChromosomeStructureVariation" is-interface="true" term="http://purl.obolibrary.org/obo/SO:1000030"></class>
 	<class name="InteractionExperiment" is-interface="true">
-		<attribute name="description" type="java.lang.String"/>
+		<attribute name="description" type="java.lang.String" term="http://semanticscience.org/resource/SIO_000136"/>
 		<attribute name="hostOrganism" type="java.lang.String"/>
-		<attribute name="name" type="java.lang.String"/>
+		<attribute name="name" type="java.lang.String" term="http://edamontology.org/data_2099"/>
 		<reference name="publication" referenced-type="Publication"/>
 		<collection name="comments" referenced-type="Comment"/>
 		<collection name="interactions" referenced-type="InteractionDetail" reverse-reference="experiment"/>
@@ -212,7 +212,7 @@
 		<attribute name="score" type="java.lang.Double" term="http://edamontology.org/data_1772"/>
 		<attribute name="scoreType" type="java.lang.String" term="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25284"/>
 		<attribute name="length" type="java.lang.Integer" term="http://semanticscience.org/resource/SIO_000041"/>
-		<attribute name="cytoLocation" type="java.lang.String"/>
+		<attribute name="cytoLocation" type="java.lang.String" term="http://purl.obolibrary.org/obo/SO_0000341"/>
 		<reference name="sequenceOntologyTerm" referenced-type="SOTerm"/>
 		<reference name="chromosomeLocation" referenced-type="Location"/>
 		<reference name="sequence" referenced-type="Sequence"/>
@@ -223,7 +223,7 @@
 	<class name="Oligo" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000696"></class>
 	<class name="Disease" extends="Annotatable" is-interface="true">
 		<attribute name="identifier" type="java.lang.String"/>
-		<attribute name="name" type="java.lang.String"/>
+		<attribute name="name" type="java.lang.String" term="http://edamontology.org/data_2099"/>
 		<collection name="genes" referenced-type="Gene" reverse-reference="diseases"/>
 		<collection name="dataSets" referenced-type="DataSet"/>
 	</class>
@@ -255,7 +255,7 @@
 	</class>
 	<class name="CVTerm" extends="OntologyTerm" is-interface="true" term="http://edamontology.org/data_0966"></class>
 	<class name="Tissue" is-interface="true">
-		<attribute name="name" type="java.lang.String"/>
+		<attribute name="name" type="java.lang.String" term="http://edamontology.org/data_2099"/>
 		<collection name="expressionResults" referenced-type="FlyAtlasResult" reverse-reference="tissue"/>
 	</class>
 	<class name="OntologyTermSynonym" is-interface="true" term="http://semanticscience.org/resource/SIO_000122">
@@ -287,7 +287,7 @@
 		<collection name="anatomyOntology" referenced-type="AnatomyTerm"/>
 	</class>
 	<class name="Component" is-interface="true" term="http://purl.obolibrary.org/obo/NCIT_C45994">
-		<attribute name="name" type="java.lang.String"/>
+		<attribute name="name" type="java.lang.String" term="http://edamontology.org/data_2099"/>
 		<reference name="protein" referenced-type="Protein" reverse-reference="components"/>
 	</class>
 	<class name="NaturalTransposableElement" extends="TransposableElement" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000797">
@@ -295,8 +295,8 @@
 	</class>
 	<class name="MicroArrayExperiment" is-interface="true" term="http://semanticscience.org/resource/SIO_001076">
 		<attribute name="identifier" type="java.lang.String"/>
-		<attribute name="description" type="java.lang.String"/>
-		<attribute name="name" type="java.lang.String"/>
+		<attribute name="description" type="java.lang.String" term="http://semanticscience.org/resource/SIO_000136"/>
+		<attribute name="name" type="java.lang.String" term="http://edamontology.org/data_2099"/>
 		<reference name="publication" referenced-type="Publication"/>
 		<collection name="assays" referenced-type="MicroArrayAssay" reverse-reference="experiment"/>
 		<collection name="results" referenced-type="MicroArrayResult" reverse-reference="experiment"/>
@@ -343,14 +343,14 @@
 		<collection name="ESTs" referenced-type="EST" reverse-reference="overlappingESTSets"/>
 	</class>
 	<class name="Mutagen" is-interface="true" term="http://purl.obolibrary.org/obo/NCIT_C672">
-		<attribute name="description" type="java.lang.String"/>
+		<attribute name="description" type="java.lang.String" term="http://semanticscience.org/resource/SIO_000136"/>
 		<collection name="alleles" referenced-type="Allele" reverse-reference="mutagens"/>
 	</class>
 	<class name="SequenceVariant" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0001060">
 		<collection name="genes" referenced-type="Gene"/>
 	</class>
 	<class name="PhenotypeAnnotation" is-interface="true" term="http://edamontology.org/operation_0226">
-		<attribute name="description" type="java.lang.String"/>
+		<attribute name="description" type="java.lang.String" term="http://semanticscience.org/resource/SIO_000136"/>
 		<attribute name="annotationType" type="java.lang.String"/>
 		<reference name="allele" referenced-type="Allele" reverse-reference="phenotypeAnnotations"/>
 		<reference name="anatomyTerm" referenced-type="AnatomyTerm"/>
@@ -426,7 +426,7 @@
 		<attribute name="type" type="java.lang.String"/>
 		<attribute name="role1" type="java.lang.String"/>
 		<attribute name="confidenceText" type="java.lang.String"/>
-		<attribute name="name" type="java.lang.String"/>
+		<attribute name="name" type="java.lang.String" term="http://edamontology.org/data_2099"/>
 		<attribute name="confidence" type="java.lang.Double"/>
 		<attribute name="relationshipType" type="java.lang.String"/>
 		<reference name="experiment" referenced-type="InteractionExperiment" reverse-reference="interactions"/>
@@ -516,7 +516,7 @@
 	<class name="Chromosome" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000340"></class>
 	<class name="UniProtFeature" is-interface="true">
 		<attribute name="begin" type="java.lang.Integer"/>
-		<attribute name="description" type="java.lang.String"/>
+		<attribute name="description" type="java.lang.String" term="http://semanticscience.org/resource/SIO_000136"/>
 		<attribute name="type" type="java.lang.String"/>
 		<attribute name="end" type="java.lang.Integer"/>
 		<reference name="feature" referenced-type="OntologyTerm"/>
@@ -541,10 +541,10 @@
 	</class>
 	<class name="Pathway" is-interface="true" term="http://purl.obolibrary.org/obo/NCIT_C54214">
 		<attribute name="identifier" type="java.lang.String"/>
-		<attribute name="description" type="java.lang.String"/>
+		<attribute name="description" type="java.lang.String" term="http://semanticscience.org/resource/SIO_000136"/>
 		<attribute name="curated" type="java.lang.Boolean"/>
-		<attribute name="name" type="java.lang.String"/>
-		<attribute name="shortName" type="java.lang.String"/>
+		<attribute name="name" type="java.lang.String" term="http://edamontology.org/data_2099"/>
+		<attribute name="shortName" type="java.lang.String" term="http://edamontology.org/data_2099"/>
 		<collection name="genes" referenced-type="Gene" reverse-reference="pathways"/>
 		<collection name="proteins" referenced-type="Protein"/>
 		<collection name="dataSets" referenced-type="DataSet"/>
@@ -552,7 +552,7 @@
 	<class name="InteractionTerm" extends="OntologyTerm" is-interface="true" term="http://purl.obolibrary.org/obo/MI_0001"></class>
 	<class name="Sample" extends="BioEntity" is-interface="true">
 		<attribute name="materialType" type="java.lang.String"/>
-		<attribute name="description" type="java.lang.String"/>
+		<attribute name="description" type="java.lang.String" term="http://semanticscience.org/resource/SIO_000136"/>
 		<attribute name="primaryCharacteristic" type="java.lang.String"/>
 		<attribute name="primaryCharacteristicType" type="java.lang.String"/>
 		<collection name="treatments" referenced-type="Treatment"/>
@@ -561,7 +561,7 @@
 	</class>
 	<class name="ECNumber" is-interface="true" term="http://edamontology.org/data_1011">
 		<attribute name="identifier" type="java.lang.String"/>
-		<attribute name="description" type="java.lang.String"/>
+		<attribute name="description" type="java.lang.String" term="http://semanticscience.org/resource/SIO_000136"/>
 		<collection name="proteins" referenced-type="Protein" reverse-reference="ecNumbers"/>
 	</class>
 	<class name="CDNAClone" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000317">
@@ -580,7 +580,7 @@
 	</class>
 	<class name="OrthologueEvidenceCode" is-interface="true" term="http://purl.obolibrary.org/obo/ECO_0000000">
 		<attribute name="abbreviation" type="java.lang.String"/>
-		<attribute name="name" type="java.lang.String"/>
+		<attribute name="name" type="java.lang.String" term="http://edamontology.org/data_2099"/>
 	</class>
 	<class name="GOEvidenceCode" extends="OntologyAnnotationEvidenceCode" is-interface="true" term="http://purl.obolibrary.org/obo/ECO_0000000"></class>
 	<class name="SequenceCollection" extends="BioEntity" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0001260">
@@ -596,10 +596,10 @@
 		<collection name="with" referenced-type="BioEntity"/>
 	</class>
 	<class name="ProteinDomain" extends="BioEntity" is-interface="true" term="http://purl.obolibrary.org/obo/NCIT_C13379">
-		<attribute name="description" type="java.lang.String"/>
+		<attribute name="description" type="java.lang.String" term="http://semanticscience.org/resource/SIO_000136"/>
 		<attribute name="identifier" type="java.lang.String"/>
 		<attribute name="type" type="java.lang.String"/>
-		<attribute name="shortName" type="java.lang.String"/>
+		<attribute name="shortName" type="java.lang.String" term="http://edamontology.org/data_2099"/>
 		<collection name="childFeatures" referenced-type="ProteinDomain"/>
 		<collection name="foundIn" referenced-type="ProteinDomain"/>
 		<collection name="parentFeatures" referenced-type="ProteinDomain"/>

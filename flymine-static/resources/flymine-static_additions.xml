@@ -402,7 +402,7 @@
 		<attribute name="url" type="java.lang.String"/>
 	</class>
 	<class name="DOTerm" extends="OntologyTerm" is-interface="true" term="http://edamontology.org/data_0966"></class>
-	<class name="RNASeqResult" is-interface="true">
+	<class name="RNASeqResult" is-interface="true" term="http://edamontology.org/operation_3680">
 		<attribute name="expressionScore" type="java.lang.Double"/>
 		<attribute name="expressionLevel" type="java.lang.String"/>
 		<attribute name="stage" type="java.lang.String"/>

@@ -240,7 +240,7 @@
 		<collection name="publications" referenced-type="Publication" reverse-reference="meshTerms"/>
 	</class>
 	<class name="ChromosomeBand" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000341"></class>
-	<class name="OntologyAnnotation" is-interface="true" term="http://semanticscience.org/resource/SIO_001166">
+	<class name="OntologyAnnotation" is-interface="true" term="http://edamontology.org/operation_0226">
 		<attribute name="qualifier" type="java.lang.String" term="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C41009"/>
 		<reference name="subject" referenced-type="Annotatable" reverse-reference="ontologyAnnotations"/>
 		<reference name="ontologyTerm" referenced-type="OntologyTerm" reverse-reference="ontologyAnnotations"/>

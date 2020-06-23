@@ -21,7 +21,7 @@ ext {
 
 subprojects {
     group = 'org.intermine'
-    version = '4.0.0'
+    version = '4.2.0'
 
     apply plugin: 'java'
     apply plugin: 'maven'
@@ -153,9 +153,9 @@ subprojects {
             vcsUrl = 'https://github.com/intermine/flymine-bio-sources.git'
             publicDownloadNumbers = true
             version {
-                name = '4.0.0'
-                desc = 'FlyMine 4.0.0'
-                vcsTag = 'flymine-4.0.0'
+                name = '4.2.0'
+                desc = 'FlyMine 4.2.0'
+                vcsTag = 'flymine-4.2.0'
             }
         }
 

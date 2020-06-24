@@ -442,7 +442,7 @@
 	<class name="TransposableElement" extends="MobileGeneticElement" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000101">
 		<reference name="insertedElement" referenced-type="NaturalTransposableElement" reverse-reference="transposableElements"/>
 	</class>
-	<class name="DatabaseReference" is-interface="true" term-"http://semanticscience.org/resource/SIO_001171">
+	<class name="DatabaseReference" is-interface="true" term="http://semanticscience.org/resource/SIO_001171">
 		<attribute name="identifier" type="java.lang.String"/>
 		<reference name="subject" referenced-type="Publication" reverse-reference="crossReferences"/>
 		<reference name="source" referenced-type="DataSource"/>

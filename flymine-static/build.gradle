@@ -1,15 +1,5 @@
-buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.0"
-        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.6.2"
-    }
-}
-
-apply plugin: "com.jfrog.bintray"
-apply plugin: "com.jfrog.artifactory"
+apply plugin: 'maven'
+apply plugin: 'signing'
 
 sourceSets {
     main {
@@ -30,43 +20,51 @@ processResources {
     from('.') { include ("*.properties")}
 }
 
-artifacts {
-    archives sourcesJar
-    archives javadocJar
+
+signing {
+    required { gradle.taskGraph.hasTask("publish") }
+    sign configurations.archives
 }
 
-artifactory {
-    contextUrl = 'https://oss.jfrog.org/artifactory/'
-    resolve {
-        repository {
-            repoKey = 'libs-release'
-        }
-    }
-    publish {
-        repository {
-            if (project.version.endsWith("-SNAPSHOT")) {
-                repoKey = 'oss-snapshot-local'
-            } else {
-                repoKey = 'oss-release-local'
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+
+            repository(url: "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
             }
-            username = System.getenv('BINTRAY_USER')
-            password = System.getenv('BINTRAY_KEY')
-        }
-        defaults {
-	    publishConfigs('archives')
+
+            snapshotRepository(url: "https://s01.oss.sonatype.org/content/repositories/snapshots/") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+
+            pom.project {
+                name project.name
+                packaging 'jar'
+                description 'InterMine FlyMine bio sources'
+                url 'https://github.com/intermine/flymine-bio-sources'
+
+                scm {
+                    connection 'scm:git:git://github.com/intermine/flymine-bio-sources.git'
+                    developerConnection 'scm:git:ssh://github.com:intermine/flymine-bio-sources.git'
+                    url 'https://github.com/intermine/flymine-bio-sources'
+                }
+
+                licenses {
+                    license {
+                        name 'LGPL-2.1'
+                        url 'https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt'
+                    }
+                }
+
+                developers {
+                    developer {
+                        name 'InterMine core team and contributors'
+                    }
+                }
+            }
         }
     }
 }
 
-bintray {
-    user = System.getenv('BINTRAY_USER')
-    key = System.getenv('BINTRAY_KEY')
-    pkg {
-        repo = 'bio'
-        name = project.name
-        userOrg = user
-        licenses = ['LGPL-2.1']
-        vcsUrl = 'https://github.com/intermine/intermine.git'
-    }
-    configurations = ['archives']
-}
